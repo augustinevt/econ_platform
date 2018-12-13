@@ -2,6 +2,15 @@ import React, {Component} from 'react';
 
 import { Drawer, Button } from 'antd';
 
+import gordian from '../images/gordian.png';
+import makingStencil from '../images/makingStencil.jpg';
+import finishedStencil from '../images/finishedStencil.jpg';
+import prePaintStencil from '../images/prePainting.jpg';
+import painting from '../images/painting.jpg';
+import postPaintStencil from '../images/postPaintStencil.jpg';
+// import gordian from '../images/gordian.png';
+import myVideo from '../images/dabbingPainting.mp4';
+
 class BlogContainer extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +32,13 @@ class BlogContainer extends Component {
           visible={this.state.drawerOpen}
           onClose={this.closeDrawer}
         >
-          drawer!
+          <img style={{width: '500px'}} src={makingStencil} alt="" />
+          <img style={{width: '500px'}} src={finishedStencil} alt="" />
+          <img style={{width: '500px'}} src={prePaintStencil} alt="" />
+          <video style={{width: '500px'}} autoPlay src={myVideo} type="video/mp4" />;
+          <img style={{width: '500px'}} src={painting} alt="" />
+          <img style={{width: '500px'}} src={postPaintStencil} alt="" />
+
         </Drawer>
 
         <div className="blogBodyWrapper">
@@ -37,6 +52,7 @@ class BlogContainer extends Component {
     return (
       <div className="blogBody">
         <h1>{blogData.title}</h1>
+        <img onClick={this.openDrawer} style={{width: '500px'}} src={gordian} alt="" />
         {
           blogData.sections.map((section)=> <div className="blogSection">
             {section.body}
