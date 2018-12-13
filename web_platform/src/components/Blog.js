@@ -52,7 +52,8 @@ class BlogContainer extends Component {
     return (
       <div className="blogBody">
         <h1>{blogData.title}</h1>
-        <img onClick={this.openDrawer} style={{width: '500px'}} src={gordian} alt="" />
+        <img  style={{width: '500px'}} src={gordian} alt="" />
+        <img onClick={this.openDrawer} style={{width: '500px'}} src={painting} alt="" />
         {
           blogData.sections.map((section)=> <div className="blogSection">
             {section.body}
